@@ -490,6 +490,8 @@ fastify.all('/call', async (req, res) => {
     I'll use ${contact.author.name} as a reference for your story.`;
 
 
+    sendTwilioMessage(contact, `Vou começar sua história utilizando *${contact.author.name}* como referência. Envie por aqui mensagens de texto ou imagens se quiser adicionar novos elementos.`)
+
     const connect = twiml.connect({
         action: `https://${req.headers['x-forwarded-host']}/ended`,
         // action: `https://workshoptdc.ngrok.io/connect`,
