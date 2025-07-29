@@ -527,7 +527,7 @@ fastify.all('/ended', async (req, res) => {
     }
     
     if (contact.messages.length > 0) {
-        await sendTwilioMessage(contact, `I will send the full story, based on the author *${contact.author.name}* to your email ${contact.email}.\n\nIf you want to hear more, just call back.`);
+        await sendTwilioMessage(contact, `I will send the full story, based on the author *${contact.author.name}* to your email ${contact.email}.\n\nIf you want to hear more, just call back.\n\n\nIf you are insterested on this code, please access https://github.com/luisleao/twilio_infinity_storyteller`);
         await sendStoryEmail(contact);
     } else {
         await sendTwilioMessage(contact, `It looks like you haven’t created any stories yet.\n\nTo start a new one, just give us a call back.`);
